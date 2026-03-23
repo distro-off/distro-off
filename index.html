@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISTRO | Музыкальный лейбл</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --accent-color: #b388ff; 
+            --text-color: #ffffff;
+            --card-bg: #161616;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 90%;
+            top: 0;
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+        }
+
+        .logo-img {
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at center, #1e1435 0%, var(--bg-color) 80%);
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 85px);
+            margin: 0;
+            line-height: 1;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #aaa;
+            max-width: 600px;
+            margin: 25px 0;
+        }
+
+        /* Кнопка */
+        .btn {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 18px 45px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(179, 136, 255, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Artists Section */
+        .section {
+            padding: 100px 5%;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .artist-card {
+            background: var(--card-bg);
+            border-radius: 24px; /* Мягкие кругленькие углы */
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16 / 9; /* Соотношение 16:9 */
+            transition: var(--transition);
+        }
+
+        .artist-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .artist-card:hover .artist-img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .artist-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            pointer-events: none;
+        }
+
+        .artist-info h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .artist-info p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Demo Section */
+        .demo-cta {
+            text-align: center;
+            padding: 120px 5%;
+            background: #0f0f0f;
+            border-radius: 40px;
+            margin: 0 5% 100px;
+            border: 1px solid #222;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            border-top: 1px solid #1a1a1a;
+            color: #444;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><img src="Distro.png" alt="DISTRO" class="logo-img"></a>
+        <nav>
+            <a href="#artists">Артисты</a>
+            <a href="https://distro.fillout.com/i" target="_blank">Стать частью лейбла</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>DISTRO MUSIC</h1>
+        <p>Больше, чем лейбл. Мы строим карьеру независимых артистов, сохраняя их индивидуальность.</p>
+        <a href="https://distro.fillout.com/i" target="_blank" class="btn">Отправить демо</a>
+    </section>
+
+    <section class="section" id="artists">
+        <h2 class="section-title">Наши артисты</h2>
+        <div class="artists-grid">
+            
+            <div class="artist-card">
+                <img src="sp.png" alt="$onik play" class="artist-img">
+                <div class="artist-info">
+                    <h3>$onik play</h3>
+                    <p>Electronic</p>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img src="az.jpg" alt="AzerOne" class="artist-img">
+                <div class="artist-info">
+                    <h3>AzerOne</h3>
+                    <p>Electronic</p>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img src="tai.jpg" alt="ТЕЙЛЕС" class="artist-img">
+                <div class="artist-info">
+                    <h3>ТЕЙЛЕС</h3>
+                    <p>Electronic</p>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img src="azerslow.jpg" alt="азерслоу" class="artist-img">
+                <div class="artist-info">
+                    <h3>азерслоу</h3>
+                    <p>Electronic</p>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img src="ban.jpg" alt="Bandit001" class="artist-img">
+                <div class="artist-info">
+                    <h3>Bandit001</h3>
+                    <p>Electronic</p>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img src="wbr.jpg" alt="White Blue Red" class="artist-img">
+                <div class="artist-info">
+                    <h3>White Blue Red Egor Gamer999</h3>
+                    <p>Electronic</p>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img src="haz.jpg" alt="Egorhazbin9993" class="artist-img">
+                <div class="artist-info">
+                    <h3>Egorhazbin9993</h3>
+                    <p>Electronic</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="demo-cta">
+        <h2 style="font-size: 38px; margin-bottom: 20px;">Готов заявить о себе?</h2>
+        <p style="color: #888; margin-bottom: 40px;">Мы всегда ищем новые таланты. Жми кнопку и заполни анкету артиста.</p>
+        <a href="https://distro.fillout.com/i" target="_blank" class="btn">Стать частью лейбла</a>
+    </section>
+
+    <footer>
+        &copy; 2026 DISTRO MUSIC LABEL. ВСЕ ПРАВА ЗАЩИЩЕНЫ.
+    </footer>
+
+</body>
+</html>
